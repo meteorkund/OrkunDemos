@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrkunDemos
+namespace OrkunDemos.Enums
 {
     public enum RulerPositionValues
     {

@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Forms;
 
-namespace OrkunDemos
+namespace OrkunDemos.Converters
 {
     public class TextBoxSizeToHeightConverter : IValueConverter
     {
@@ -14,7 +14,7 @@ namespace OrkunDemos
             Size size = TextRenderer.MeasureText(value.ToString(), segoeUI);
             if (size.Height < 20)
                 return 30;
-            return size.Height*2;
+            return size.Height * 2;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

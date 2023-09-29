@@ -7,15 +7,10 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows;
 
-namespace OrkunDemos
+namespace OrkunDemos.Controls
 {
-    public abstract class UIButtonTrackBase : Control
+    public partial class UIButtonTrack : Control
     {
-        static UIButtonTrackBase()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(UIButtonTrackBase), new FrameworkPropertyMetadata(typeof(UIButtonTrackBase)));
-
-        }
 
         public string ButtonTrackText
         {
@@ -25,7 +20,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for ButtonTrackText.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ButtonTrackTextProperty =
-            DependencyProperty.Register(nameof(ButtonTrackText), typeof(string), typeof(UIButtonTrackBase), new PropertyMetadata(default(string)));
+            DependencyProperty.Register(nameof(ButtonTrackText), typeof(string), typeof(UIButtonTrack), new PropertyMetadata(default(string)));
 
         public Brush ButtonTrackTextColor
         {
@@ -35,7 +30,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for ButtonTrackText.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ButtonTrackTextColorProperty =
-            DependencyProperty.Register(nameof(ButtonTrackTextColor), typeof(Brush), typeof(UIButtonTrackBase), new PropertyMetadata(default(string)));
+            DependencyProperty.Register(nameof(ButtonTrackTextColor), typeof(Brush), typeof(UIButtonTrack), new PropertyMetadata(default(string)));
 
 
 
@@ -48,7 +43,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for ButtonTrackLabelText.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ButtonTrackLabelTextProperty =
-            DependencyProperty.Register(nameof(ButtonTrackLabelText), typeof(string), typeof(UIButtonTrackBase), new PropertyMetadata(default(string)));
+            DependencyProperty.Register(nameof(ButtonTrackLabelText), typeof(string), typeof(UIButtonTrack), new PropertyMetadata(default(string)));
 
 
 
@@ -62,7 +57,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for ButtonTrackLabelColor.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ButtonTrackLabelColorProperty =
-            DependencyProperty.Register(nameof(ButtonTrackLabelColor), typeof(Brush), typeof(UIButtonTrackBase), new PropertyMetadata(default(Brush)));
+            DependencyProperty.Register(nameof(ButtonTrackLabelColor), typeof(Brush), typeof(UIButtonTrack), new PropertyMetadata(default(Brush)));
 
 
 
@@ -74,7 +69,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for ButtonBackground.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ButtonBackgroundProperty =
-            DependencyProperty.Register(nameof(ButtonBackground), typeof(Brush), typeof(UIButtonTrackBase), new PropertyMetadata(default(Brush)));
+            DependencyProperty.Register(nameof(ButtonBackground), typeof(Brush), typeof(UIButtonTrack), new PropertyMetadata(default(Brush)));
 
         public Visibility ButtonTrackLabelVisibility
         {
@@ -84,7 +79,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for ButtonTrackLabelVisibility.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ButtonTrackLabelVisibilityProperty =
-            DependencyProperty.Register(nameof(ButtonTrackLabelVisibility), typeof(Visibility), typeof(UIButtonTrackBase), new PropertyMetadata(default(Visibility)));
+            DependencyProperty.Register(nameof(ButtonTrackLabelVisibility), typeof(Visibility), typeof(UIButtonTrack), new PropertyMetadata(default(Visibility)));
 
 
 
@@ -98,7 +93,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for Position.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PositionProperty =
-            DependencyProperty.Register(nameof(Position), typeof(double), typeof(UIButtonTrackBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register(nameof(Position), typeof(double), typeof(UIButtonTrack), new PropertyMetadata(default(double)));
 
 
 
@@ -110,7 +105,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for MaxLimit.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxLimitProperty =
-            DependencyProperty.Register(nameof(MaxLimit), typeof(double), typeof(UIButtonTrackBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register(nameof(MaxLimit), typeof(double), typeof(UIButtonTrack), new PropertyMetadata(800.0));
 
 
 
@@ -122,7 +117,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for MinLimit.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MinLimitProperty =
-            DependencyProperty.Register(nameof(MinLimit), typeof(double), typeof(UIButtonTrackBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register(nameof(MinLimit), typeof(double), typeof(UIButtonTrack), new PropertyMetadata(0.0));
 
 
 

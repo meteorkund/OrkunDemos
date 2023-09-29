@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace OrkunDemos
+namespace OrkunDemos.Converters
 {
     public class OrientationToMarginConverter : IValueConverter
     {

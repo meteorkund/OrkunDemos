@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Forms;
 
-namespace OrkunDemos
+namespace OrkunDemos.Converters
 {
     public class TextBoxSizeToWidthConverter : IValueConverter
     {

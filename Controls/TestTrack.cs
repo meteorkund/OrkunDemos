@@ -3,11 +3,11 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace OrkunDemos
+namespace OrkunDemos.Controls
 {
     public class TestTrack : Control
     {
-   
+
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -31,7 +31,7 @@ namespace OrkunDemos
         }
 
         private bool IsClick = false;
-        private void Button_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        private void Button_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed && IsClick == true)
             {

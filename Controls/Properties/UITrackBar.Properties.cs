@@ -7,20 +7,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using OrkunDemos.Enums;
 
-namespace OrkunDemos
+namespace OrkunDemos.Controls
 {
-    public abstract class UITrackBarBase : Canvas
+    public partial class UITrackBar : Canvas
     {
-
-
-        static UITrackBarBase()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(UITrackBarBase), new FrameworkPropertyMetadata(typeof(UITrackBarBase)));
-        }
-
-
-
 
         public double Max
         {
@@ -30,7 +22,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for Max.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxProperty =
-            DependencyProperty.Register("Max", typeof(double), typeof(UITrackBarBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("Max", typeof(double), typeof(UITrackBar), new PropertyMetadata(default(double)));
 
         public RulerPositionValues RulerPosition
         {
@@ -39,7 +31,7 @@ namespace OrkunDemos
         }
 
         public static readonly DependencyProperty RulerPositionProperty =
-            DependencyProperty.Register("RulerPosition", typeof(RulerPositionValues), typeof(UITrackBarBase), new PropertyMetadata(default(RulerPositionValues)));
+            DependencyProperty.Register("RulerPosition", typeof(RulerPositionValues), typeof(UITrackBar), new PropertyMetadata(RulerPositionValues.Left));
 
         public double Min
         {
@@ -49,7 +41,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for Min.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MinProperty =
-            DependencyProperty.Register("Min", typeof(double), typeof(UITrackBarBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("Min", typeof(double), typeof(UITrackBar), new PropertyMetadata(0.0));
 
 
 
@@ -61,7 +53,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for Total.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TotalProperty =
-            DependencyProperty.Register("Total", typeof(int), typeof(UITrackBarBase), new PropertyMetadata(default(int)));
+            DependencyProperty.Register("Total", typeof(int), typeof(UITrackBar), new PropertyMetadata(default(int)));
 
 
         public double TextNoneValue
@@ -72,7 +64,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for TextNoneValue.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextNoneValueProperty =
-            DependencyProperty.Register(nameof(TextNoneValue), typeof(double), typeof(UITrackBarBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register(nameof(TextNoneValue), typeof(double), typeof(UITrackBar), new PropertyMetadata(default(double)));
 
 
         public Brush LinesColor
@@ -83,7 +75,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for LinesColor.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LinesColorProperty =
-            DependencyProperty.Register("LinesColor", typeof(Brush), typeof(UITrackBarBase), new PropertyMetadata(default(Brush)));
+            DependencyProperty.Register("LinesColor", typeof(Brush), typeof(UITrackBar), new PropertyMetadata(default(Brush)));
 
 
         public Brush TextColor
@@ -94,7 +86,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for TextColor.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextColorProperty =
-            DependencyProperty.Register("TextColor", typeof(Brush), typeof(UITrackBarBase), new PropertyMetadata(default(Brush)));
+            DependencyProperty.Register("TextColor", typeof(Brush), typeof(UITrackBar), new PropertyMetadata(default(Brush)));
 
 
         public Brush TextBackgroundColor
@@ -105,7 +97,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for TextBackgroundColor.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextBackgroundColorProperty =
-            DependencyProperty.Register("TextBackgroundColor", typeof(Brush), typeof(UITrackBarBase), new PropertyMetadata(default(Brush)));
+            DependencyProperty.Register("TextBackgroundColor", typeof(Brush), typeof(UITrackBar), new PropertyMetadata(default(Brush)));
 
 
 
@@ -117,7 +109,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for TextOpacity.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextOpacityProperty =
-            DependencyProperty.Register("TextOpacity", typeof(double), typeof(UITrackBarBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("TextOpacity", typeof(double), typeof(UITrackBar), new PropertyMetadata(1.0));
 
 
 
@@ -131,7 +123,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for TextHeight.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextHeightProperty =
-            DependencyProperty.Register("TextHeight", typeof(double), typeof(UITrackBarBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("TextHeight", typeof(double), typeof(UITrackBar), new PropertyMetadata(10.0));
 
 
 
@@ -144,7 +136,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for TextWidth.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextWidthProperty =
-            DependencyProperty.Register("TextWidth", typeof(double), typeof(UITrackBarBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register("TextWidth", typeof(double), typeof(UITrackBar), new PropertyMetadata(10.0));
 
 
 
@@ -156,7 +148,7 @@ namespace OrkunDemos
 
         // Using a DependencyProperty as the backing store for TextFontSize.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextFontSizeProperty =
-            DependencyProperty.Register(nameof(TextFontSize), typeof(double), typeof(UITrackBarBase), new PropertyMetadata(default(double)));
+            DependencyProperty.Register(nameof(TextFontSize), typeof(double), typeof(UITrackBar), new PropertyMetadata(10.0));
 
 
 

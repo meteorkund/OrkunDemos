@@ -1,36 +1,31 @@
-﻿using System;
+﻿using OrkunDemos.Enums;
+using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using System.Windows;
-using System.ComponentModel;
-using System.Resources;
-using System.Security.Cryptography.Xml;
-using System.Data;
-using System.Linq;
-using System.Xml.Linq;
 
-namespace OrkunDemos
+namespace OrkunDemos.Controls
 {
-    public class UITrackBar : UITrackBarBase
+    public partial class UITrackBar : Canvas
     {
         private readonly List<UIButtonTrack> _trackBarButtons = new List<UIButtonTrack>();
         public IReadOnlyList<UIButtonTrack> TrackBarButtons { get => _trackBarButtons; }
 
+        static UITrackBar()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(UITrackBar), new FrameworkPropertyMetadata(typeof(UITrackBar)));
+
+        }
         public UITrackBar()
         {
             Loaded += UIStrcb_Loaded;
 
-            Initialize();
-
         }
 
-        private void Initialize()
-        {
 
-        }
 
         private void UIStrcb_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -45,6 +40,7 @@ namespace OrkunDemos
 
             if (RulerPosition == RulerPositionValues.Right)
                 DrawRuler(SystemParameters.PrimaryScreenHeight, Width, SetTickPositionSwapped, SetTickTextPositionVertical);
+
         }
 
 
@@ -73,7 +69,7 @@ namespace OrkunDemos
             SetLeft(newButton, 25);
             SetTop(newButton, 0);
 
-            newButton.ButtonTrackText = "0";
+            newButton.ButtonTrackText = "775";
             newButton.MouseDown += item_MouseDown;
             newButton.MouseUp += item_MouseUp;
             newButton.MouseMove += item_MouseMove;
@@ -199,7 +195,7 @@ namespace OrkunDemos
                         Point point = e.GetPosition(this);
                         var absY = Math.Abs(point.Y - 800);
                         var x = (point.Y - buttonTrack.ActualHeight / 2);
-                        if (point.Y <= 800 && point.Y >=-1)
+                        if (point.Y <= 800 && point.Y >= -1)
                         {
                             //prew pos < current todo.
                             SetTop(_ButtonTrack, x);
